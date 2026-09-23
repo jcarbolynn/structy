@@ -72,3 +72,29 @@ def linked_list_find(head, target):
   if head.val == target:
     return True
   return linked_list_find(head.next, target)
+
+# get node value while vs recursion
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def get_node_value(head, index):
+  current = head
+  current_index = 0
+
+  while current is not None:
+    if current_index == index:
+      return current.val
+    current_index += 1
+    current = current.next
+
+  return None
+
+def get_node_value(head, index):
+
+  if head is None:
+    return None
+  if index == 0:
+    return head.val
+  return get_node_value(head.next, index-1)
