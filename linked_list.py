@@ -30,3 +30,23 @@ d.next = e
 e.next = f
 
 print(find_largest(a, float("-inf")))
+
+# sum linked list while vs recursion
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def sum_list(head):
+  current = head
+  sum = 0
+  while current is not None:
+    sum += current.val
+    current = current.next
+  return sum
+  
+def sum_list(head):
+  if head is None:
+    return 0
+  else:
+    return head.val + sum_list(head.next)
