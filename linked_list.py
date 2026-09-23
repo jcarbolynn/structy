@@ -50,3 +50,25 @@ def sum_list(head):
     return 0
   else:
     return head.val + sum_list(head.next)
+
+# find target while vs recursion
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self.next = None
+
+def linked_list_find(head, target):
+  current = head
+  while current is not None:
+    if current.val == target:
+      return True
+    else:
+      current = current.next
+  return False
+
+def linked_list_find(head, target):
+  if head is None:
+    return False
+  if head.val == target:
+    return True
+  return linked_list_find(head.next, target)
