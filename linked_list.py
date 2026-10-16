@@ -3,6 +3,37 @@ class Node:
     self.val = val
     self.next = None
 
+# Write a function, is_univalue_list, that takes in the head of a linked list as an argument. The function should return a boolean indicating whether or not the linked list contains exactly one unique value.
+
+You may assume that the input list is non-empty.
+def is_univalue_list(head):
+  current = head
+  
+  while current is not None:
+    if current.val != head.val:
+      print("False")
+      return False
+    current = current.next
+  print("True")
+
+a = Node(2)
+b = Node(1)
+c = Node(2)
+d = Node(2)
+e = Node(2)
+
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+
+is_univalue_list(a)
+
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
 # Write a function, find_largest, that takes in the head of a linked list containing numbers as an argument. The function should return the largest value found of in the linked list.
 
 def find_largest(head, largest):
